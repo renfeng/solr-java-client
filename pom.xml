@@ -1,0 +1,186 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>work.fair24</groupId>
+	<artifactId>solr-java-client</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>solr-java-client</name>
+
+	<description></description>
+
+	<url></url>
+
+	<developers>
+		<developer>
+			<id>+FrankR</id>
+			<name>Frank R.</name>
+			<email>renfeng.cn@gmail.com</email>
+			<url>https://plus.google.com/+FrankR</url>
+			<organization>Fair24</organization>
+			<organizationUrl></organizationUrl>
+			<timezone>+8</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/renfeng/solr-java-client/commit/${buildNumber}</connection>
+	</scm>
+
+	<!-- suppresses Implementation-Vendor -->
+	<!-- https://maven.apache.org/shared/maven-archiver/examples/manifest.html -->
+	<!--<organization>
+		<name>Fair24</name>
+		<url></url>
+	</organization>-->
+
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+
+		<plugins>
+
+			<!-- phase: validate -->
+			<plugin>
+				<artifactId>maven-help-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>active-profiles</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>display-dependency-updates</goal>
+							<goal>display-plugin-updates</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- http://www.avajava.com/tutorials/lessons/how-do-i-display-the-value-of-a-property.html -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<echo>Displaying value of a property</echo>
+								<echo>[project.scm.connection] ${project.scm.connection}</echo>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- phase: generate-resources -->
+
+			<!-- phase: compile -->
+
+			<!-- phase: process-classes -->
+
+			<!-- phase: process-test-classes -->
+
+			<!-- phase: test -->
+
+			<!-- phase: prepare-package -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<!-- <phase>prepare-package</phase> -->
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- <format>{0}</format> <items> <item></item> </items> -->
+					<!-- <doUpdate>true</doUpdate> -->
+					<!-- <scmDirectory>..</scmDirectory> -->
+					<!-- <doCheck>true</doCheck> -->
+					<!--<doCheck>${maven.buildNumber.doCheck}</doCheck>-->
+					<shortRevisionLength>7</shortRevisionLength>
+				</configuration>
+			</plugin>
+
+			<!-- phase: package -->
+
+			<!-- phase: pre-integration-test -->
+
+			<!-- phase: install -->
+
+			<!-- phase: deploy -->
+
+			<!-- phase: clean -->
+
+			<!-- phase: site -->
+
+		</plugins>
+
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-jackson2</artifactId>
+			<version>1.22.0</version>
+		</dependency>
+
+		<!-- logging -->
+
+		<!-- testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<properties>
+
+		<maven.buildNumber.doCheck>false</maven.buildNumber.doCheck>
+
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+
+		<!-- mvn test -Dmaven.test.skip=false -Dtest=Class#method -->
+		<!-- https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html -->
+		<!-- https://maven.apache.org/surefire/maven-surefire-plugin/examples/skipping-test.html -->
+		<maven.test.skip>true</maven.test.skip>
+
+		<!-- <encoding>UTF-8</encoding> -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+	</properties>
+
+</project>
