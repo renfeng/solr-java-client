@@ -17,8 +17,8 @@ public class SolrDocument {
 	protected static final SimpleDateFormat solrDateFormat =
 			new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'", Locale.forLanguageTag("en_US"));
 
-	private static final String ID_FIELD = "id";
-	private static final String TYPE_FIELD = "type_ss";
+	public static final String ID_FIELD = "id";
+	public static final String TYPE_FIELD = "type_ss";
 
 	/**
 	 * http://grepcode.com/file_/repo1.maven.org/maven2/org.apache.solr/solr-solrj/4.10.3/org/apache/solr/client/solrj/util/ClientUtils.java/?v=source
