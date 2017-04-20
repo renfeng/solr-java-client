@@ -101,8 +101,8 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.8</version>
 				<executions>
-					<!-- http://www.avajava.com/tutorials/lessons/how-do-i-display-the-value-of-a-property.html -->
 					<execution>
+						<!-- http://www.avajava.com/tutorials/lessons/how-do-i-display-the-value-of-a-property.html -->
 						<phase>validate</phase>
 						<goals>
 							<goal>run</goal>
