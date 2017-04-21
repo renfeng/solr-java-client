@@ -17,6 +17,9 @@ public class SolrDocument {
 	protected static final SimpleDateFormat solrDateFormat =
 			new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'", Locale.forLanguageTag("en_US"));
 
+	public static final String ID_FIELD = "id";
+	public static final String TYPE_FIELD = "type_s";
+
 	/**
 	 * http://grepcode.com/file_/repo1.maven.org/maven2/org.apache.solr/solr-solrj/4.10.3/org/apache/solr/client/solrj/util/ClientUtils.java/?v=source
 	 * <p/>
@@ -57,10 +60,10 @@ public class SolrDocument {
 		return urlBase + "update?wt=json&commit=true";
 	}
 
-	@Key("id")
+	@Key(ID_FIELD)
 	private String id;
 
-	@Key("type_s")
+	@Key(TYPE_FIELD)
 	private String type;
 
 	public String getId() {
