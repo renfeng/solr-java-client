@@ -1,6 +1,6 @@
 package work.fair24.solr;
 
-import com.google.api.client.util.Key;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  */
 public class SolrResponse<T extends SolrDocument> {
 
-	@Key("numFound")
+	@SerializedName("numFound")
 	private int numFound;
 
-	@Key("start")
+	@SerializedName("start")
 	private int start;
 
-	@Key("docs")
+	@SerializedName("docs")
 	private List<T> docs;
 
 	public List<T> getDocs() {

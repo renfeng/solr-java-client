@@ -1,6 +1,6 @@
 package work.fair24.solr;
 
-import com.google.api.client.util.Key;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Map;
 
@@ -12,13 +12,13 @@ public class SolrSelectResponse<T extends SolrDocument, F extends SolrFacetField
 //	@Key
 //	private SolrResponseHeader responseHeader;
 
-	@Key("response")
+	@SerializedName("response")
 	private SolrResponse<T> response;
 
-	@Key("facet_counts")
+	@SerializedName("facet_counts")
 	private SolrFacetCounts<F> facetCounts;
 
-	@Key("highlighting")
+	@SerializedName("highlighting")
 	private Map<String, String> highlighting;
 
 	public SolrResponse<T> getResponse() {

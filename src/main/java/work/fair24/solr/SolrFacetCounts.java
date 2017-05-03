@@ -1,6 +1,6 @@
 package work.fair24.solr;
 
-import com.google.api.client.util.Key;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by renfeng on 8/15/15.
@@ -10,7 +10,7 @@ public class SolrFacetCounts<F extends SolrFacetFields> {
 //	@Key("facet_queries")
 //	private SolrFacetQueries facetQueries;
 
-	@Key("facet_fields")
+	@SerializedName("facet_fields")
 	private F facetFields;
 
 //	@Key("facet_dates")

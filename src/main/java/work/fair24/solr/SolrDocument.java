@@ -1,6 +1,6 @@
 package work.fair24.solr;
 
-import com.google.api.client.util.Key;
+import com.google.gson.annotations.SerializedName;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -14,8 +14,8 @@ import java.util.Locale;
  */
 public class SolrDocument {
 
-	protected static final SimpleDateFormat solrDateFormat =
-			new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'", Locale.forLanguageTag("en_US"));
+	protected static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
+			"yyyy-MM-dd'T'hh:mm:ss'Z'", Locale.forLanguageTag("en_US"));
 
 	public static final String ID_FIELD = "id";
 	public static final String TYPE_FIELD = "type_s";
@@ -60,11 +60,15 @@ public class SolrDocument {
 		return urlBase + "update?wt=json&commit=true";
 	}
 
-	@Key(ID_FIELD)
+	@SerializedName(ID_FIELD)
 	private String id;
 
-	@Key(TYPE_FIELD)
+	@SerializedName(TYPE_FIELD)
 	private String type;
+
+	public SolrDocument() {
+		setType(this.getClass().getName());
+	}
 
 	public String getId() {
 		return id;

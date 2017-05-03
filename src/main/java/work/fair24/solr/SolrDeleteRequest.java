@@ -1,6 +1,6 @@
 package work.fair24.solr;
 
-import com.google.api.client.util.Key;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class SolrDeleteRequest {
 
-	@Key("delete")
+	@SerializedName("delete")
 	private List<String> delete;
 
 	public List<String> getDelete() {

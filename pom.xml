@@ -148,9 +148,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.google.http-client</groupId>
-			<artifactId>google-http-client-jackson2</artifactId>
-			<version>1.22.0</version>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.0</version>
 		</dependency>
 
 		<!-- logging -->
@@ -169,8 +169,8 @@
 
 		<maven.buildNumber.doCheck>false</maven.buildNumber.doCheck>
 
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
 
 		<!-- mvn test -Dmaven.test.skip=false -Dtest=Class#method -->
 		<!-- https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html -->
