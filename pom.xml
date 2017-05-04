@@ -169,8 +169,8 @@
 
 		<maven.buildNumber.doCheck>false</maven.buildNumber.doCheck>
 
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.5</maven.compiler.source>
+		<maven.compiler.target>1.5</maven.compiler.target>
 
 		<!-- mvn test -Dmaven.test.skip=false -Dtest=Class#method -->
 		<!-- https://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html -->
