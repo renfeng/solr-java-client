@@ -14,7 +14,7 @@ import java.util.Locale;
  */
 public class SolrDocument {
 
-	protected static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
+	public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
 			"yyyy-MM-dd'T'hh:mm:ss'Z'", Locale.forLanguageTag("en_US"));
 
 	public static final String ID_FIELD = "id";
