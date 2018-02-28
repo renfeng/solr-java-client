@@ -29,7 +29,7 @@ public class SolrPartialUpdate<T> {
 		this.set = set;
 	}
 
-	public SolrPartialUpdate set(T set) {
+	public SolrPartialUpdate<T> set(T set) {
 		this.set = set;
 		return this;
 	}
@@ -38,7 +38,7 @@ public class SolrPartialUpdate<T> {
 		return set;
 	}
 
-	public SolrPartialUpdate add(T add) {
+	public SolrPartialUpdate<T> add(T add) {
 		this.add = add;
 		return this;
 	}
