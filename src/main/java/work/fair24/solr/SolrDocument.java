@@ -4,6 +4,7 @@ import com.google.api.client.util.Key;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * extends this class to add doc fields
@@ -16,6 +17,10 @@ public class SolrDocument {
 
 	public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(
 			"yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+
+	{
+		DATE_FORMAT.setTimeZone(TimeZone.getTimeZone("UTC"));
+	}
 
 	public static final String ID_FIELD = "id";
 	public static final String TYPE_FIELD = "type_s";
